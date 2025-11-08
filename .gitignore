@@ -139,6 +139,7 @@ celerybeat.pid
 .envrc
 .venv
 env/
+**/.env*
 venv/
 ENV/
 env.bak/
@@ -205,7 +206,3 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
-
-
-# All the env files
-**/.env*
