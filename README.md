@@ -97,9 +97,10 @@ nutriscan_agent/
     "fat_g": 18
   }
 }
+
 ---
 
-## 🐳 Run Locally
+**## 🐳 Run Locally**
 ```bash
 pip install -r requirements.txt
 uvicorn agent:app --reload
