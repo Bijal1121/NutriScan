@@ -98,17 +98,17 @@ nutriscan_agent/
   }
 }
 ```
-
 ---
 
-**## 🐳 Run Locally**
+## 🐳 Run Locally
 ```bash
 pip install -r requirements.txt
 uvicorn agent:app --reload
 ```
 
 ---
-☁️ Deploy to Cloud Run
+
+## ☁️ Deploy to Cloud Run
 ```bash
 gcloud builds submit --tag gcr.io/PROJECT-ID/nutriscan
 gcloud run deploy nutriscan \
