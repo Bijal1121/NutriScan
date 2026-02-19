@@ -97,6 +97,7 @@ nutriscan_agent/
     "fat_g": 18
   }
 }
+```
 
 ---
 
