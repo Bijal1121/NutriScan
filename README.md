@@ -1,4 +1,9 @@
 # 🥗 NutriScan  
+
+[![Cloud Run](https://img.shields.io/badge/Deployed-Google%20Cloud%20Run-blue)]()
+[![FastAPI](https://img.shields.io/badge/FastAPI-Production%20API-green)]()
+[![Architecture](https://img.shields.io/badge/Architecture-Sequential%20Multi--Agent-purple)]()
+
 **Multi-Agent Nutrition Analysis System**  
 Built for the **Google Cloud Run Hackathon**
 
@@ -6,46 +11,59 @@ Built for the **Google Cloud Run Hackathon**
 
 ## 🚀 Overview
 
-NutriScan analyzes food images and returns structured nutrition estimates in seconds.
+NutriScan is a cloud-native, multi-agent system that analyzes food images and returns structured nutrition estimates in ~6 seconds.
 
-The system uses a **sequential multi-agent architecture** built with Google Agent Development Kit (ADK) and deployed on **Google Cloud Run** for scalable, low-latency inference.
+The project demonstrates:
 
-Capture → Detect → Estimate → Structured Output.
+- Multi-agent orchestration using Google ADK  
+- Production-ready API deployment on Google Cloud Run  
+- Modular AI system design  
+- End-to-end integration from mobile frontend to scalable backend  
 
 ---
 
 ## 🎥 Demo
 
-▶️ Watch the demo here:  
-https://youtu.be/4EbKh5Ua81w?si=7TsdbIrIhyHIAPiU
+[![NutriScan Demo](https://img.youtube.com/vi/4EbKh5Ua81w/maxresdefault.jpg)](https://youtu.be/4EbKh5Ua81w?si=7TsdbIrIhyHIAPiU)
+
 
 ---
 
-## 🧠 How It Works
+## 🧠 Architecture & Design
+```
+NutriScan follows a **sequential agent pipeline**:
 
-### 1️⃣ Vision Agent
-- Accepts food image  
-- Detects food items  
-- Outputs structured food labels  
+Frontend (React Native)
+↓
+Cloud Run (FastAPI Backend)
+↓
+Vision Agent → Nutrition Analysis Agent
+↓
+Structured JSON Response
+```
 
-### 2️⃣ Nutrition Analysis Agent
-- Takes structured labels  
-- Estimates calories & macronutrients  
-- Returns consistent JSON response  
+### Vision Agent
+- Extracts structured food labels from image input  
 
-Agents operate sequentially to ensure modular reasoning and clean outputs.
+### Nutrition Analysis Agent
+- Maps detected food items to calorie & macronutrient estimates  
+- Returns consistent, schema-controlled output  
+
+This separation improves:
+- Maintainability  
+- Interpretability  
+- Extensibility  
 
 ---
 
-## 🏗 Architecture
+## ☁️ Cloud Deployment
 
-![NutriScan Architecture](./Flowchart.jpg)
+- Containerized with Docker  
+- Deployed on Google Cloud Run  
+- Stateless API design  
+- Scalable, managed infrastructure  
 
-**Flow:**
-1. React Native frontend captures image  
-2. Image sent to FastAPI backend (Cloud Run)  
-3. Vision Agent → Nutrition Analysis Agent  
-4. Structured nutrition response returned  
+Average inference latency: **~6 seconds**
 
 ---
 
@@ -54,7 +72,7 @@ Agents operate sequentially to ensure modular reasoning and clean outputs.
 **Backend**
 - Python  
 - FastAPI  
-- Google ADK  
+- Google Agent Development Kit (ADK)  
 - Docker  
 - Google Cloud Run  
 
@@ -70,17 +88,11 @@ nutriscan_agent/
 │
 ├── sub_agents/
 │ ├── vision_agent/
-│ │ ├── init.py
-│ │ └── agent.py
-│ │
 │ └── nutrition_analysis_agent/
-│ ├── init.py
-│ └── agent.py
 │
 ├── agent.py # Sequential orchestrator
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
 ---
@@ -98,18 +110,17 @@ nutriscan_agent/
   }
 }
 ```
----
 
+---
 ## 🐳 Run Locally
-```bash
+```
 pip install -r requirements.txt
 uvicorn agent:app --reload
 ```
-
 ---
 
 ## ☁️ Deploy to Cloud Run
-```bash
+```
 gcloud builds submit --tag gcr.io/PROJECT-ID/nutriscan
 gcloud run deploy nutriscan \
   --image gcr.io/PROJECT-ID/nutriscan \
@@ -117,5 +128,3 @@ gcloud run deploy nutriscan \
   --region us-central1 \
   --allow-unauthenticated
 ```
-
----
