@@ -22,7 +22,7 @@ The project demonstrates:
 
 ---
 
-## 🎥 Demo
+## 🎥 Demo - Play this video!
 
 [![NutriScan Demo](https://img.youtube.com/vi/4EbKh5Ua81w/maxresdefault.jpg)](https://youtu.be/4EbKh5Ua81w?si=7TsdbIrIhyHIAPiU)
 
