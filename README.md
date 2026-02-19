@@ -39,7 +39,7 @@ Agents operate sequentially to ensure modular reasoning and clean outputs.
 
 ## 🏗 Architecture
 
-![NutriScan Architecture](./architecture.png)
+![NutriScan Architecture](./Flowchart.jpg)
 
 **Flow:**
 1. React Native frontend captures image  
