@@ -65,7 +65,7 @@ Agents operate sequentially to ensure modular reasoning and clean outputs.
 ---
 
 ## 📂 Project Structure
-
+```
 nutriscan_agent/
 │
 ├── sub_agents/
@@ -81,7 +81,7 @@ nutriscan_agent/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
+```
 
 ---
 
