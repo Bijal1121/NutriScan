@@ -66,3 +66,54 @@ Agents operate sequentially to ensure modular reasoning and clean outputs.
 
 ## 📂 Project Structure
 
+nutriscan_agent/
+│
+├── sub_agents/
+│ ├── vision_agent/
+│ │ ├── init.py
+│ │ └── agent.py
+│ │
+│ └── nutrition_analysis_agent/
+│ ├── init.py
+│ └── agent.py
+│
+├── agent.py # Sequential orchestrator
+├── requirements.txt
+├── README.md
+└── .gitignore
+
+
+---
+
+## 🧪 Example API Response
+
+```json
+{
+  "food_items": ["Grilled Chicken", "Rice", "Broccoli"],
+  "nutrition_estimate": {
+    "calories": 520,
+    "protein_g": 42,
+    "carbs_g": 55,
+    "fat_g": 18
+  }
+}
+---
+
+## 🐳 Run Locally
+```bash
+pip install -r requirements.txt
+uvicorn agent:app --reload
+```
+
+---
+☁️ Deploy to Cloud Run
+```bash
+gcloud builds submit --tag gcr.io/PROJECT-ID/nutriscan
+gcloud run deploy nutriscan \
+  --image gcr.io/PROJECT-ID/nutriscan \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated
+```
+
+---
