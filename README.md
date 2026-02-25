@@ -1,4 +1,4 @@
-# 🥗 NutriScan  
+# 🥗 NutriScan: Serverless Multi-Agent Nutrition Estimation System  
 
 [![Cloud Run](https://img.shields.io/badge/Deployed-Google%20Cloud%20Run-blue)]()
 [![FastAPI](https://img.shields.io/badge/FastAPI-Production%20API-green)]()
